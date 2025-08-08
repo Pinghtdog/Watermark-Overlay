@@ -1,12 +1,8 @@
-# gui_app.py
-
 import customtkinter as ctk
 from tkinter import filedialog, messagebox
 from tkinterdnd2 import DND_FILES, TkinterDnD
 from PIL import Image
 import os
-
-# Import the image processing function from our other file
 from image_processor import add_overlay
 
 class App(TkinterDnD.Tk):
