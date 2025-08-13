@@ -9,13 +9,13 @@ def add_overlay(base_image_path, overlay_image, output_path, position, scale, pa
         base_image = Image.open(base_image_path).convert("RGBA")
         base_width, base_height = base_image.size
 
-        # Resize overlay 
+        # To Resize overlay 
         new_overlay_width = int(base_width * scale)
         overlay_ratio = overlay_image.height / overlay_image.width
         new_overlay_height = int(new_overlay_width * overlay_ratio)
         resized_overlay = overlay_image.resize((new_overlay_width, new_overlay_height), Image.Resampling.LANCZOS)
 
-        # Position overlay 
+        # For positioning overlay 
         padding_px = int(base_width * padding)
         if position == 'bottom-right':
             pos = (base_width - new_overlay_width - padding_px, base_height - new_overlay_height - padding_px)
